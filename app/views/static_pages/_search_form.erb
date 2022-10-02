@@ -1,0 +1,7 @@
+<div class="m-12">
+  <%= form_with url:root_path , method: :get do |form| %>
+    <%= form.search_field :user_id, placeholder: "Search By User ID", class:"rounded-xl" %>
+    <%= form.submit 'Search', class:"bg-purple-600 text-blue-100 px-4 py-2 rounded-xl", data: { disable_with: "Searching..." } %>
+  <%end%> 
+
+</div>

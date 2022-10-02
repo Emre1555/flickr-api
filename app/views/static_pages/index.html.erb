@@ -1,0 +1,21 @@
+<div class="flex flex-col justify-center">
+
+  <%= render "static_pages/search_form" %>
+
+
+  <div class="container grid grid-cols-3 gap-2 mx-auto">
+    <% if @photos %>
+      <% @photos.each do |photo| %>    
+      <div class="w-full rounded m-4">
+        <img src="<%= Flickr.url_n(photo)%>" alt="<%= photo.title %>">
+      </div>
+      <%end%>
+    <%else%>
+      <% @list.each do |l|%>
+       <div class="w-full rounded m-4">
+        <img src="<%= Flickr.url_n(l) %>" alt="<%= l.title %>"  />
+        </div>
+      <% end %>
+    <%end%>
+  </div>
+</div>
